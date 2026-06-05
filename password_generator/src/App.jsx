@@ -15,7 +15,7 @@ function App() {
     if (numberAllowed) str += "1234567890";
     if (charAllowed) str += "!@#$%^&*(){}[]_-+=~`";
     for (let i = 1; i <= length; i++) {
-      let char = Math.floor(Math.random() * str.length + 1);
+      let char = Math.floor(Math.random() * str.length);
       pass += str.charAt(char);
     }
     setPassword(pass);
@@ -41,7 +41,10 @@ function App() {
             readOnly
             ref={passwordRef}
           />
-          <button onClick={coppyPassowordToClipboard} className="outline-none bg-blue-700 text-white px-3 py-0.5 shrink-0">
+          <button
+            onClick={coppyPassowordToClipboard}
+            className="outline-none bg-blue-700 text-white px-3 py-0.5 shrink-0"
+          >
             copy
           </button>
         </div>
